@@ -1,0 +1,23 @@
+spool C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\spool.txt 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\DDL\RAD_DDL's.ddl" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\DDL\sttm_cust_account_custom.ddl" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\INC\CSTB_FID_DATA_BLOCKS__IFDCHGPE.INC" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\INC\CSTB_FID_DATA_SOURCES__IFDCHGPE.INC" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\INC\CSTB_FID_SCREENS__IFDCHGPE.INC" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\INC\CSTB_FID_SCR_TABS__IFDCHGPE.INC" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\INC\CSTB_FIELD_LABELS__IFDCHGPE.INC" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\INC\CSTB_OTHER_LABELS__IFDCHGPE.INC" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\INC\CSTB_SUMMARY_INFO__IFDCHGPE.INC" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\INC\SMTB_FCC_FCJ_MAPPING__IFDCHGPE.INC" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\INC\SMTB_FUNCTION_DESCRIPTION__IFDCHGPE.INC" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\INC\SMTB_MENU__IFDCHGPE.INC" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\INC\SMTB_ROLE_DETAIL__IFDCHGPE.INC" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\SPC\ifpks_ifdchgpe_custom.spc" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\SPC\ifpks_ifdchgpe_main.spc" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\SPC\ifpks_masarat_chg_process.spc.spc" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\SQL\ifpks_ifdchgpe_custom.sql" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\SQL\ifpks_ifdchgpe_main.sql" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\SQL\ifpks_masarat_chg_process.sql.sql" 
+@"C:\Users\ChenchalaVenkatesh\Desktop\jhumoria baseline\SQL\wrp_batch_custom.sql" 
+spool off 
+exit 
