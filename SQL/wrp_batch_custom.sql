@@ -153,7 +153,7 @@ CREATE OR REPLACE  PACKAGE BODY WRP_BATCH_CUSTOM AS
 						   p_function_id IN VARCHAR2) IS
 	 BEGIN
 		debug.pr_debug('IF','Calling the PR_PROCESS_IFBMAMFE');					
-		PR_PROCESS_IFBMAMFE(p_branch_code  Varchar2);
+		ifpks_masarat_chg_process.PR_PROCESS_IFBMAMFE(p_branch_code  Varchar2);
 	  RETURN;
 	 EXCEPTION
           WHEN OTHERS THEN
@@ -163,66 +163,8 @@ CREATE OR REPLACE  PACKAGE BODY WRP_BATCH_CUSTOM AS
                RETURN;
      END PR_AEODIFBMAMFE;
 							
-	 PROCEDURE PR_PROCESS_IFBMAMFE(p_branch_code in Varchar2) AS
-
-  CURSOR cust_ac_cursor IS
-    SELECT *
-      FROM sttm_cust_account_custom cust, iftm_masarat_sub_model imsm
-     WHERE cust.subscription_model = imsm.type_of_package
-       AND imsm.record_stat = 'O'
-       AND imsm.auth_stat = 'A'
-       AND cust.branch_code = p_branch_code
-       AND EXISTS (SELECT 1
-              FROM sttm_cust_account acc
-             WHERE cust_ac_no = cust.cust_ac_no
-               AND cust.branch_code = cust.branch_code
-               AND acc.record_stat = 'O'
-               AND acc.auth_stat = 'A')
-    
-  l_cust_ac_no         sttm_cust_account_custom.cust_ac_no%TYPE;
-  l_branch_code        sttm_cust_account_custom.branch_code%TYPE;
-  l_subscription_model sttm_cust_account_custom.subscription_model%TYPE;
-  g_charge_type        iftm_masarat_sub_model.type_of_package%TYPE;
-  g_charge_amount      iftm_masarat_sub_model.charge_amount%TYPE;
-  g_charge_currency    iftm_masarat_sub_model.charge_currency%TYPE;
-  g_freq_of_charge     iftm_masarat_sub_model.freq_of_charge%TYPE;
-  g_chg_income_gl      iftm_masarat_sub_model.chg_income_gl%TYPE;
-  g_chg_txn_code       iftm_masarat_sub_model.chg_txn_code%TYPE;
-  g_chg_prod           iftm_masarat_sub_model.chg_prod%TYPE;
-
-BEGIN
-
-  FOR cust_record IN cust_ac_cursor LOOP
-  
-    l_cust_ac_no         := cust_record.cust_ac_no;
-    l_branch_code        := cust_record.branch_code;
-    l_subscription_model := cust_record.subscription_model;
-    g_charge_type        := cust_record.charge_type;
-    g_charge_amount      := cust_record.charge_amount;
-    g_charge_currency    := cust_record.charge_currency;
-    g_freq_of_charge     := cust_record.freq_of_charge;
-    g_chg_income_gl      := cust_record.chg_income_gl;
-    g_chg_txn_code       := cust_record.chg_txn_code;
-    g_chg_prod           := cust_record.chg_prod;
-  
-    debug.pr_debug('IF', 'Customer: ' || l_cust_ac_no);
-    debug.pr_debug('IF', 'Branch: ' || l_branch_code);
-    debug.pr_debug('IF', 'Subscription Model: ' || l_subscription_model);
-    debug.pr_debug('IF', 'Charge Type: ' || g_charge_type);
-    debug.pr_debug('IF', 'Charge Amount: ' || g_charge_amount);
-    debug.pr_debug('IF', 'Charge Currency: ' || g_charge_currency);
-    debug.pr_debug('IF', 'Charge Frequency: ' || g_freq_of_charge);
-    debug.pr_debug('IF', 'Charge Income GL: ' || g_chg_income_gl);
-    debug.pr_debug('IF', 'Charge Transaction Code: ' || g_chg_txn_code);
-    debug.pr_debug('IF', 'Charge Product: ' || g_chg_prod);
-  END LOOP;
-  RETURN;
-EXCEPTION
-  WHEN OTHERS THEN
-    debug.pr_debug('Error occurred: ' || SQLERRM);
-    RETURN;
-END PROCESS_IFBMAMFE;
+	 
  ---IFBMAMFE processing part of EOD in EOTI stage end----------
 																
 END wrp_batch_custom;
-/
+
