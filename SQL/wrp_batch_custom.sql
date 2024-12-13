@@ -8,7 +8,7 @@ CREATE OR REPLACE  PACKAGE BODY WRP_BATCH_CUSTOM AS
  
     Change Description  : Collect charges based on Subscription from the customers
  
-    Search Tag          : IFBMAMFE processing part of EOD in EOTI stage
+    Search Tag          : IFBMAMFE_processing_part_of_EOD_in_EOTI_stage
      
      -------------------------------------------------------------------------------------------------------
      */
@@ -146,7 +146,7 @@ CREATE OR REPLACE  PACKAGE BODY WRP_BATCH_CUSTOM AS
                RETURN;
      END pr_aeodifdpdcis;
 	 
-	 ---IFBMAMFE processing part of EOD in EOTI stage start----------
+	 ---IFBMAMFE_processing_part_of_EOD_in_EOTI_stage_start----------
 	 PROCEDURE PR_AEODIFBMAMFE(p_error_code IN OUT VARCHAR2,
 						   p_branch_code IN sttms_branch.branch_code%TYPE,
 						   p_user_id IN smtbs_current_users.user_id%TYPE,
@@ -164,7 +164,7 @@ CREATE OR REPLACE  PACKAGE BODY WRP_BATCH_CUSTOM AS
      END PR_AEODIFBMAMFE;
 							
 	 
- ---IFBMAMFE processing part of EOD in EOTI stage end----------
+ ---IFBMAMFE_processing_part_of_EOD_in_EOTI_stage_end----------
 																
 END wrp_batch_custom;
 
